@@ -250,6 +250,9 @@ ramips_board_detect() {
 	*"Memory 2 Move")
 		name="m2m"
 		;;
+	*"Mercury MAC1200R v2")
+		name="mac1200rv2"
+		;;
 	*"MicroWRT")
 		name="microwrt"
 		;;
@@ -402,6 +405,12 @@ ramips_board_detect() {
 		;;
 	*"TEW-692GR")
 		name="tew-692gr"
+		;;
+	*"TEW-714TRU")
+		name="tew-714tru"
+		;;
+	*"Timecloud")
+		name="timecloud"
 		;;
 	*"UBNT-ERX")
 		name="ubnt-erx"

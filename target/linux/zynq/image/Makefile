@@ -22,9 +22,6 @@ define Image/boot-imgs
 	$(call Image/BuildDTB,$(DTS_DIR)/$(DEVICE_DTS).dts,\
 		$(BIN_DIR)/$(IMG_PREFIX)-system.dtb)
 
-	$(call Image/mkfs/cpiogz)
-	$(call Image/mkfs/targz)
-
 	# Create uboot cpio.gz
 	mkimage -A arm -T ramdisk -C gzip -n "$(PROFILE) OpenWRT rootfs" \
 		-d $(BIN_DIR)/$(IMG_PREFIX)-rootfs.cpio.gz \
@@ -54,10 +51,8 @@ KERNEL_ENTRY_POINT=0x8000
 ### Device macros ###
 define Device/Default
 	IMG_PREFIX := zynq
-	DEVICE_DTS :=
 	PROFILE_SANITIZED :=
 endef
-DEVICE_VARS += DEVICE_DTS
 
 define Device/DefaultConfig
 	DEVICE_LC = $(1)
